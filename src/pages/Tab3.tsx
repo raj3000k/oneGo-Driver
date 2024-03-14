@@ -19,7 +19,7 @@ const Tab3: React.FC = () => {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push("/Frontpage"); 
+    history.push("/tab2"); 
   };
   const [value, setValue] = useState<E164Number | undefined>();
   const handleChange = (newValue?: E164Number | undefined) => {

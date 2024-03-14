@@ -28,6 +28,11 @@ interface Viewport {
 }
 
 const Tab2: React.FC = () => {
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push("/Frontpage"); 
+  };
   const [viewport, setViewport] = useState<Viewport>({
     latitude: 21.2497, // Initialize latitude
     longitude: 81.6050, // Initialize longitude
@@ -69,9 +74,9 @@ const Tab2: React.FC = () => {
             <IonItem routerLink="/edit-profile">
               <IonLabel>Edit my profile </IonLabel>
             </IonItem>
-            <IonItem routerLink="/my-rides">
+            <IonItem routerLink="/Frontpage" >
   <IonIcon icon={carOutline} slot="start" />
-  <IonLabel>My Rides</IonLabel>
+  <button onAuxClick={handleClick}> <IonLabel  >My Rides</IonLabel></button>
 </IonItem>
             <IonItem routerLink="/settings">
               <IonLabel>Settings</IonLabel>
