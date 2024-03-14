@@ -12,7 +12,7 @@ import profileImage from '../assets/profile.png';
 // Map Box Integration
 import Map, { GeolocateControl } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import "mapbox-gl/dist/mapbox-gl.css";
+
 import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
 import { useEffect, useRef, useState } from "react";
 import MapGL, { Marker } from 'react-map-gl';

@@ -14,6 +14,7 @@ import { ellipse, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
+import Frontpage from './pages/frontpage';
 import './tailwind.css';
 
 /* Core CSS required for Ionic components to work properly */
@@ -50,6 +51,9 @@ const App: React.FC = () => (
           </Route>
           <Route path="/tab3">
             <Tab3 />
+          </Route>
+          <Route path="/frontpage">
+            <Frontpage />
           </Route>
           <Route exact path="/">
             <Redirect to="/tab1" />

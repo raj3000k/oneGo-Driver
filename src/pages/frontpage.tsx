@@ -1,30 +1,37 @@
-import { IonContent, IonHeader, IonPage,IonImg, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import '../assets/logo.png';
-import { useHistory } from 'react-router-dom';
-import {CardOne} from './components/cards';
+import { IonIcon, IonContent, IonButtons, IonHeader, IonMenuButton, IonMenu, IonPage, 
+    IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonAvatar } from '@ionic/react';
 
-import Tab2 from './Tab2';
-import Tab3 from './Tab3';
+import CardOne from './components/cards';
 
 
-const Tab1: React.FC = () => {
-  const history = useHistory();
+const Frontpage: React.FC = () => {
+  
 
-  const handleClick = () => {
-    history.push("/tab3"); // navigate to the '/new' route
-  };
+ 
   return (
-    <IonPage className='bg-white	overflow-auto '>
-     
-     <div className=" min-h-full flex flex-col justify-center px-6 py-12 lg:px-8">
+    <div className='bg-white h-full w-full overflow-auto' >
+       
+        <div className='p-2'>
+            <div className='text-black'>
+            <h1>My Rides</h1></div>
+            <div className='p-1 flex-row space-y-3 ' >
+     <CardOne title="Passenger: Raj" content="This is some content for the card." fair={34} from="Delhi Airport" 
+     dropped="Gurgaon Central" />
+     <CardOne title="Passenger: Harsh" content="This is some content for the card." fair={507} from="Mahipalpur, Delhi" 
+     dropped="Gurgaon Central" />
+
+<CardOne title="Passenger: Harsh" content="This is some content for the card." fair={507} from="Mahipalpur, Delhi" 
+     dropped="Gurgaon Central" />
+
+<CardOne title="Passenger: Harsh" content="This is some content for the card." fair={507} from="Mahipalpur, Delhi" 
+     dropped="Gurgaon Central" />
+     </div>
+     </div>
       
-      </div>
-    </IonPage>
+      
     
+      </div>
   );
 };
 
-export default Tab1;
+export default Frontpage;

@@ -8,6 +8,8 @@ import PhoneInput from 'react-phone-number-input'
 import './Tab3.css';
 type E164Number = string;
 
+
+
   // Initialize state with undefined or E164Number
   
 
@@ -17,7 +19,7 @@ const Tab3: React.FC = () => {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push("/tab2"); // navigate to the '/new' route
+    history.push("/Frontpage"); 
   };
   const [value, setValue] = useState<E164Number | undefined>();
   const handleChange = (newValue?: E164Number | undefined) => {
@@ -200,7 +202,8 @@ const Tab3: React.FC = () => {
                   name="postal-code"
                   id="postal-code"
                   autoComplete="postal-code"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5
+                   text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
