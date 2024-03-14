@@ -9,12 +9,47 @@ import ExploreContainer from '../components/ExploreContainer';
 // Example profile image
 import profileImage from '../assets/profile.png';
 
+// Map Box Integration
+import Map, { GeolocateControl } from "react-map-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+import "mapbox-gl/dist/mapbox-gl.css";
+import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
+import { useEffect, useRef, useState } from "react";
+import MapGL, { Marker } from 'react-map-gl';
+
+
+// MapBox Integration Imports Ends
+
+
+interface Viewport {
+  latitude: number;
+  longitude: number;
+  zoom: number;
+}
+
 const Tab2: React.FC = () => {
+  const [viewport, setViewport] = useState<Viewport>({
+    latitude: 21.2497, // Initialize latitude
+    longitude: 81.6050, // Initialize longitude
+    zoom: 3.5,
+  });
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((pos) => {
+      setViewport({
+        latitude: pos.coords.latitude,
+        longitude: pos.coords.longitude,
+        zoom: 3.5,
+      });
+    });
+  }, []);
+  
+  
   return (
     <>
       <IonMenu contentId="main-content" side="start">
         <IonHeader>
-          <IonToolbar color=" [#1656B7]">
+          <IonToolbar color="secondary">
             <IonTitle>Menu</IonTitle>
           </IonToolbar>
         </IonHeader>
@@ -44,20 +79,36 @@ const Tab2: React.FC = () => {
           </IonList>
         </IonContent>
       </IonMenu>
-      <IonPage id="main-content">
+      <IonPage id="main-content" className='bg-white'>
         <IonHeader>
           <IonToolbar>
             <IonButtons slot="start">
               <IonMenuButton></IonMenuButton>
             </IonButtons>
-            <IonTitle>My Profile</IonTitle>
+            
           </IonToolbar>
         </IonHeader>
-        <IonContent className="ion-padding">
-          {/* Content of the main page goes here */}
-          {/* Pass the name prop to ExploreContainer */}
-          <ExploreContainer name="Your Name" />
-        </IonContent>
+
+
+        { <Map
+        mapboxAccessToken="pk.eyJ1IjoiaGFyc2h1MDcxMSIsImEiOiJjbG9ncmpqMmsxMzNxMmlxcGpqM21uOHVjIn0.UNBaBHVEWs9ogPvEZcPyoQ"
+        initialViewState={{
+          longitude: -100,
+          latitude: 40,
+          zoom: 3.5,
+        }}
+        mapStyle="mapbox://styles/mapbox/streets-v11"
+      >
+        <GeolocateControl
+          positionOptions={{ enableHighAccuracy: true }}
+          trackUserLocation={true}
+        />
+      </Map> } 
+
+
+              
+
+       
       </IonPage>
     </>
   );
