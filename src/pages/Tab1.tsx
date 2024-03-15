@@ -1,7 +1,7 @@
 import { IonContent, IonHeader, IonPage,IonImg, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import logo from '../assets/logo.png';
+
 import '../assets/logo.png';
 import { useHistory } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ const Tab1: React.FC = () => {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="mx-auto h-auto w-auto"
-            src="src/assets/logo.png"
+            src= {logo}
             alt="Your Company"
           />
           <h2 className="mt-1 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
